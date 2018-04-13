@@ -85,7 +85,9 @@
 				if ( el.tabs.length == el.contents.length ){
 					
 					//close all open tabs
-					function Unselect_All_Tabs(){
+					function Unselect_All_Tabs( tabWrapper ){
+						el.tabs = tabWrapper.querySelectorAll(".tab-button");
+						el.contents = tabWrapper.querySelectorAll(".tab-target");
 						for ( var i = 0; i < el.tabs.length; i++ ){
 							var tab = el.tabs[i];
 							Remove_Class( tab, "tab-active" );
@@ -116,7 +118,7 @@
 							return;
 						}
 						
-						Unselect_All_Tabs();
+						Unselect_All_Tabs( this.parentNode );
 						
 						Select_Tab( targetTab );
 					});
