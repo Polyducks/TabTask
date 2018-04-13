@@ -32,7 +32,7 @@ TAB MODULE
 	width: 100%;
 	display: block;
 }
-	.tab-wrapper .tab-row .tab{
+	.tab-wrapper .tab-row .tab-button{
 		display: block;
 		float: left;
 		margin-right: 1px;
@@ -40,13 +40,13 @@ TAB MODULE
 		padding: 15px 20px;
 		cursor: pointer;
 	}
-	.tab-wrapper .tab-row .tab.tab-active{
+	.tab-wrapper .tab-row .tab-button.tab-active{
 		background-color: white;
 		border-top: solid 4px #15A1A2;
 		padding: 11px 25px 15px;
 		cursor: initial;
 	}
-		.tab-wrapper .tab-row .tab h1{
+		.tab-wrapper .tab-row .tab-button h1{
 			margin: 0;
 			line-height: 1;
 			font-size: 14px;
