@@ -72,14 +72,57 @@
 			//make it easier to work with
 			var wrapper = tabWrappers[wrappers];
 			
+			//list elements under one object for clarity
 			var el = {};
 				el.tabRow = wrapper.querySelector(".tab-row");
-				el.tabs = wrapper.querySelectorAll(".tab-row .tab");
-				el.tabContent = wrapper.querySelector(".tab-content");
+				el.tabs = wrapper.querySelectorAll(".tab-row .tab-button");
 				el.contents = wrapper.querySelectorAll(".tab-target");
 			
-			if ( el.tabRow && el.tabs && el.tabContent && el.contents ){
+			//make sure all items are found before continuing
+			if ( el.tabRow && el.tabs && el.contents ){
 				
+				//check there are equal numbers of tabs and contents
+				if ( el.tabs.length == el.contents.length ){
+					
+					//close all open tabs
+					function Unselect_All_Tabs(){
+						for ( var i = 0; i < el.tabs.length; i++ ){
+							var tab = el.tabs[i];
+							Remove_Class( tab, "tab-active" );
+							var content = el.contents[i];
+							Remove_Class( content, "tab-target-active" );
+						}
+					}
+					//open specific tab
+					function Select_Tab( tab_element ){
+						Add_Class( tab_element, "tab-active" );
+						var contentSelector = tab_element.getAttribute("data-tab-target");
+						var content = document.querySelector( contentSelector );
+						Add_Class( content, "tab-target-active" );
+					}
+					
+					//attach listener to the wrapper element and look for 
+					//target of event, this reduces lag as the project scales
+					el.tabRow.addEventListener("click", function(e){
+						var targetTab;
+						if ( e.target.tagName == "H1" ){
+							//the h1 was clicked
+							targetTab = e.target.parentNode;
+						}else if ( Has_Class( e.target, "tab-button" ) ){
+							//tab clicked directly
+							targetTab = e.target;
+						}else{
+							//no tab clicked, just the row. Escape
+							return;
+						}
+						
+						Unselect_All_Tabs();
+						
+						Select_Tab( targetTab );
+					});
+				}else{
+					console.warn("Create_Tab_Functionality: There are an unequal number of tabs and tab contents.");
+				}
 			}else{
 				console.warn("Create_Tab_Functionality: Something missing from structure of HTML, script failed gracefully.");
 			}
