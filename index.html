@@ -9,16 +9,32 @@
 		<script src="tabs.js"></script>
 	</head>
 	<body>
-		<div class="tab-row">
-			<div class="tab" data-tab-target="">
-				<h1>Terminal 1</h1>
+		<section id="terminal-data-tabs">
+			<div class="tab-row">
+				<div class="tab" data-tab-target="#terminal-data-tabs #tab-0">
+					<h1>Terminal 1</h1>
+				</div>
+				<div class="tab" data-tab-target="#terminal-data-tabs #tab-1">
+					<h1>Terminal 1</h1>
+				</div>
+				<div class="tab" data-tab-target="#terminal-data-tabs #tab-2">
+					<h1>Terminal 1</h1>
+				</div>
 			</div>
-		</div>
-		<div class="tab-content">
 			<div class="tab-content">
-				<h1>This is title 1</h1>
-				<p>This is the paragraph content</p>
+				<div class="tab-content" id="tab-0">
+					<h1>This is title 0</h1>
+					<p>This is the paragraph content</p>
+				</div>
+				<div class="tab-content" id="tab-1">
+					<h1>This is title 1</h1>
+					<p>This is the paragraph content</p>
+				</div>
+				<div class="tab-content" id="tab-2">
+					<h1>This is title 2</h1>
+					<p>This is the paragraph content</p>
+				</div>
 			</div>
-		</div>
+		</section>
 	</body>
 </html>
