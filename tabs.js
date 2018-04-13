@@ -86,8 +86,11 @@
 					
 					//close all open tabs
 					function Unselect_All_Tabs( tabWrapper ){
+						//re-find the tabs and contents based on which tabWrapper is
+						//being accessed.
 						el.tabs = tabWrapper.querySelectorAll(".tab-button");
 						el.contents = tabWrapper.querySelectorAll(".tab-target");
+						//loop through both tab wrappers, setting them as deactive
 						for ( var i = 0; i < el.tabs.length; i++ ){
 							var tab = el.tabs[i];
 							Remove_Class( tab, "tab-active" );
@@ -122,6 +125,7 @@
 						
 						Select_Tab( targetTab );
 					});
+					
 				}else{
 					console.warn("Create_Tab_Functionality: There are an unequal number of tabs and tab contents.");
 				}
