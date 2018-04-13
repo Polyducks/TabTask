@@ -23,7 +23,7 @@ body{
 TAB MODULE
 =================================*/
 .tab-wrapper{
-	color: #0C2D56;
+	color: #043061;
 	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
@@ -73,6 +73,7 @@ TAB MODULE
 			margin: 0;
 		}
 		.tab-wrapper .tab-content .tab-target p{
+			font-size: 12px;
 		}
 		
 /* micro-mobile users */
