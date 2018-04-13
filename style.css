@@ -1,3 +1,4 @@
+/* CSS RESET */
 body,html{
 	min-width: 100%;
 	min-height: 100%;
@@ -8,24 +9,68 @@ body,html{
 	box-sizing: border-box;
 }
 
-.tab-wrapper{}
+/* GENERIC STYLES */
+body{
+	background-color: #F3F4F6;
+}
+#wrapper{
+	max-width: 1248px;
+	margin: 0 auto;
+	padding: 10px 15px;
+}
+
+/*=================================
+TAB MODULE
+=================================*/
+.tab-wrapper{
+	color: #0C2D56;
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
 
 .tab-wrapper .tab-row{
+	overflow: auto;
+	width: 100%;
+	display: block;
 }
 	.tab-wrapper .tab-row .tab{
-		
+		display: block;
+		float: left;
+		margin-right: 1px;
+		background-color: #E3E8EC;
+		padding: 15px 20px;
+		cursor: pointer;
+	}
+	.tab-wrapper .tab-row .tab.tab-active{
+		background-color: white;
+		border-top: solid 4px #15A1A2;
+		padding: 11px 25px 15px;
+		cursor: initial;
 	}
 		.tab-wrapper .tab-row .tab h1{
-		
+			margin: 0;
+			line-height: 1;
+			font-size: 14px;
 		}
 		
 .tab-wrapper .tab-content{
-	
+	width: 100%;
+	overflow: auto;
 }
 	.tab-wrapper .tab-content .tab-target{
-		
+		display: none;
+		width: 100%;
+		background-color: white;
+		overflow: auto;
+	}
+	.tab-wrapper .tab-content .tab-target.tab-target-active{
+		display: block;
+		padding: 25px;
 	}
 		.tab-wrapper .tab-content .tab-target h1{
+			font-size: 18px;
+			font-weight: bold;
+			line-height: 1.1;
+			margin: 0;
 		}
 		.tab-wrapper .tab-content .tab-target p{
 		}
